@@ -1,0 +1,36 @@
+.homepage{
+  margin-left: 80px;
+  margin-top: 0px;
+}
+
+.filter{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  height: 60px;
+}
+
+.filter *{
+  font-size: 20px;
+}
+
+.filter-container{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.filter-container *{
+  cursor: pointer;
+  padding: 4px 25px;
+  border-radius: 10px;
+}
+
+#all{
+  background-color: gray;
+}
