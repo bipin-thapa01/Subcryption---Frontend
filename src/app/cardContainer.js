@@ -1,17 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useImperativeHandle } from "react";
 import Card from "./card";
 import Image from "next/image";
 import "./card.css";
 
-export default function CardContainer() {
+export default function CardContainer({ ref }) {
   const [cardDetails, setCardDetails] = useState(null);
   const [cards, setCards] = useState(null);
 
-  const filterCard = (cardDetails)=>{
-    
+  const filterCard = (type) => {
+    if (cardDetails != null) {
+      if (type === 'all') {
+        setCards(cardDetails.map((item, index) => {
+          return <Card key={index} param={item} />
+        }));
+      }
+      else {
+        setCards(cardDetails.filter((item) => {
+          return item.type.toLowerCase() === type;
+        }).map((item, index) => {
+          return <Card key={index} param={item} />
+        }));
+      }
+    }
   }
+
+  useImperativeHandle(ref, () => ({
+    filterCard: filterCard,
+  }));
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,8 +41,7 @@ export default function CardContainer() {
   }, []);
 
   useEffect(() => {
-    if(cardDetails!=null){
-      const filteredCards = filterCard(cardDetails);
+    if (cardDetails != null) {
       setCards(cardDetails.map((item, index) => {
         return <Card key={index} param={item} />
       }));

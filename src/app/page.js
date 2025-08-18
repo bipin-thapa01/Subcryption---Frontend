@@ -1,6 +1,7 @@
 import Nav from "./nav";
 import HomePage from "./homePage";
 import "./global.css";
+import { metadata } from "./layout";
 
 export default function Page(){
   return(
