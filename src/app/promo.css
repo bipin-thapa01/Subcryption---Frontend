@@ -1,0 +1,45 @@
+.promo-page{
+  margin: 0px 0px;
+  padding-top: 100px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  user-select: none;
+}
+
+.part1{
+  position: relative;
+}
+
+.promo-title{
+  font-family: 'Edu NSW ACT Cursive', cursive;
+  font-weight: 500;
+  font-size: 120px;
+  font-style: normal;
+  background: var(--font-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.promo-desc{
+  position: absolute;
+  font-weight: 500;
+  font-size: 16px;
+  left: 430px;
+  bottom: 20px;
+}
+
+.part2{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.count{
+  font-size: 30px;
+  font-weight: 500;
+  background: var(--font-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

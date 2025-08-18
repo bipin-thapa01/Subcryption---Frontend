@@ -1,28 +1,39 @@
 .homepage{
-  margin-left: 80px;
+  margin: 0px 120px;
   margin-top: 0px;
 }
 
 .filter{
-  position: fixed;
-  left: 0px;
-  top: 0px;
   width: 100%;
-  height: 60px;
-  height: 60px;
+  margin-top: 60px;
+  display: flex;
+  column-gap: 50px;
+  align-items: center;
 }
 
 .filter *{
   font-size: 20px;
 }
 
+.filter-by{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  background-color: gray;
+  padding: 4px 15px;
+  border-radius: 10px;
+}
+
+.filter-by *{
+  background-color: inherit;
+}
+
 .filter-container{
   height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-left: 300px;
-  margin-right: 300px;
+  column-gap: 50px;
 }
 
 .filter-container *{
