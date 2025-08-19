@@ -9,7 +9,7 @@ export default function IntroCard({ data, desc }) {
   useEffect(() => {
     if (data) {
       setintroCard(
-        <div className="intro-card card">
+        <div className="intro-card item-card">
           <Image src={data.imgurl} alt="Image"
             width={100} height={100} className="intro-card-image" />
           <div className="intro-card-sub">

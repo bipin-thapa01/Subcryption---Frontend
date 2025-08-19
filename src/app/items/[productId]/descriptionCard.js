@@ -5,8 +5,8 @@ export default function DescriptionCard({ desc }) {
   useEffect(() => {
     if (desc) {
       setDescCard(
-        <div className="description-card card" style={{ whiteSpace: "pre-line" }}>
-          {desc.description}
+        <div className="description-card item-card" style={{ whiteSpace: "pre-line" }}>
+          {`${desc.description}\n\n Note: If topup hasn't been completed within a day then you will be refunded.`}
         </div>
       );
     }

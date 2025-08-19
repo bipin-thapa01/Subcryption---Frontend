@@ -5,8 +5,8 @@ export default function Requirement({ requirement }) {
   useEffect(() => {
     if (requirement) {
       setRequirementCard(
-        <div className="card requirement-card">
-          <div className="requirement-title">
+        <div className="item-card requirement-card">
+          <div className="requirement-title title">
             <span>1. </span>
             {requirement[0].requirement_desc}</div>
           {

@@ -38,8 +38,41 @@
 
 .count{
   font-size: 30px;
+  text-align: center;
   font-weight: 500;
   background: var(--font-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1000px){
+  .promo-page{
+    flex-direction: column;
+  }
+
+  .part2{
+    margin-top: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 830px){
+  .promo-title{
+    font-size: 60px;
+  }
+
+  .promo-desc{
+    font-size: 12px;
+    left: 215px;
+    bottom: 10px;
+  }
+
+  .count{
+    font-size: 20px;
+  }
+
+  .desc{
+    font-size: 12px;
+  }
 }

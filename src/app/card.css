@@ -1,16 +1,24 @@
 .card-container{
+  width: 100%;
   margin: 40px 0px;
   display: flex;
   column-gap: 25px;
   row-gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card{
-  width: 180px;
+  width: 178px;
   height: 240px;
   border-radius: 10px;
   background-color: var(--card-color);
   cursor: pointer;
+  border: 2px solid var(--card-color);
+}
+
+.card:hover{
+  border: 2px solid var(--hover-color);
 }
 
 .card *{
@@ -50,4 +58,28 @@
   text-overflow: ellipsis;
   max-width: 100%;
   padding: 0px 2px;
+  margin-top: 5px;
+}
+
+@media (max-width: 925px){
+  .title{
+    font-size: 14px;
+  }
+
+  .company{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 631px){
+  .card{
+    width: 140px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 525px){
+  .card-container{
+    column-gap: 5px;
+  }
 }
