@@ -1,11 +1,13 @@
 import ItemContainer from "./itemContainer";
-import "../../global.css";
+import Nav from "@/app/nav";
+import "@/app/global.css";
 
 export default async function Page({params}){
   const {productId} =  await params;
   return (
-    <div className="main-bg">
+    <>
+      <Nav/>
       <ItemContainer productId={productId}/>
-    </div>
+    </>
   );
 }

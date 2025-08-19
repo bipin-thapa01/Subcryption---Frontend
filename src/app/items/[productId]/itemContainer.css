@@ -1,0 +1,110 @@
+.item-container{
+  margin: 60px 120px;
+  display: flex;
+  column-gap: 20px;
+}
+
+.left-cards{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.card{
+  border-radius: 15px;
+  height: fit-content;
+  border: 1px solid rgb(56, 56, 56);
+  padding: 10px 20px;
+}
+
+.card, .card *{
+  background-color: var(--card-color);
+}
+
+.intro-card{
+  display: flex;
+  align-items: center;
+  width: 400px;
+  padding: 10px 5px;
+  column-gap: 10px;
+}
+
+.description-card{
+  padding: 15px 20px 15px 10px;
+  line-height: 1.5;
+  width: 400px;
+}
+
+.intro-card-sub{
+  display: flex;
+  flex-direction: column;
+  row-gap: 17px;
+  height: fit-content;
+}
+
+.intro-card-image{
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.intro-card-title{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.intro-card-time, .intro-card-country{
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  font-size: 14px !important;
+}
+
+.intro-card-desc{
+  font-style: italic;
+}
+
+.intro-card-icon{
+  font-size: 18px !important;
+}
+
+.right-cards{
+  width: 80%;
+}
+
+.requirement-card{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  position: relative;
+}
+
+.requirement-title{
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.requirement-title span{
+  margin-right: 10px;
+  font-size: 30px;
+  background-color: purple;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 15px;
+  width: 40px;
+}
+
+.input{
+  width: 400px;
+  height: 35px;
+  border-radius: 15px;
+  background-color: rgb(185, 185, 185);
+  color: black;
+  opacity: 1;
+  outline: none;
+  border: none;
+  padding: 0px 15px;
+  font-size: 16px;
+}

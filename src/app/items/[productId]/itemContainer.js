@@ -1,6 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import IntroCard from "./introCard";
+import DescriptionCard from "./descriptionCard";
+import Requirement from "./requirement";
+import Amount from "./amount";
+import "./itemContainer.css"
 
 export default function ItemContainer({ productId }) {
   const [itemData, setItemData] = useState(null);
@@ -8,6 +13,8 @@ export default function ItemContainer({ productId }) {
   const [description, setDescription] = useState(null);
   const [amount, setAmount] = useState(null);
   const [requirement, setRequirement] = useState(null);
+  const [leftCards, setLeftCards] = useState(null);
+  const [rightCards, setRightCards] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,15 +45,23 @@ export default function ItemContainer({ productId }) {
     }
   }, [itemData]);
 
-  useEffect(()=>{
-    console.log(basicData);
-    console.log(description);
-    console.log(amount);
-    console.log(requirement);
-  },[basicData, description, amount, requirement]);
+  useEffect(() => {
+    setLeftCards(<div className="left-cards">
+      <IntroCard data={basicData} desc={description} />
+      <DescriptionCard desc={description} />
+    </div>);
+    setRightCards(
+      <form className="right-cards">
+        <Requirement requirement={requirement}/>
+        <Amount amount={amount}/>
+      </form>
+    );
+  }, [basicData, description, amount, requirement]);
 
   return (
-    <div>
+    <div className="item-container">
+      {leftCards}
+      {rightCards}
     </div>
   );
 }
