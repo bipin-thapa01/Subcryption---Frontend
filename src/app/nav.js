@@ -41,15 +41,15 @@ export default function Nav() {
         Subcryption
       </div>
       <div className="icon-container">
-        <div className="icon icon1" onClick={() => { router.push('/') }}>
+        <div className="icon icon1 left-icon" onClick={() => { router.push('/') }}>
           <AiFillHome className="home-icon" />
           <div className="icon-name">Home</div>
         </div>
-        <div className="icon icon2" onClick={() => { router.push('/history') }}>
+        <div className="icon icon2 left-icon" onClick={() => { router.push('/history') }}>
           <MdOutlineHistory className="history-icon" />
           <div className="icon-name">History</div>
         </div>
-        <div className="icon" onClick={() => { router.push('/profile') }}>
+        <div className="icon left-icon" onClick={() => { router.push('/profile') }}>
           <IoPerson className="profile-icon" />
           <div className="icon-name">Profile</div>
         </div>
