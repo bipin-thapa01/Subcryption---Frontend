@@ -76,3 +76,27 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 445px){
+  .promo-desc{
+    font-size: 10px;
+    left: 10px;
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 360px){
+  .promo-title{
+    font-size: 50px;
+  }
+
+  .promo-desc{
+    font-size: 10px;
+    left: 5px;
+    bottom: 10px;
+  }
+
+  .desc{
+    font-size: 10px;
+  }
+}

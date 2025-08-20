@@ -103,4 +103,8 @@
   .filter-container{
     column-gap: 5px;
   }
+
+  .filter *{
+    font-size: 12px;
+  }
 }
