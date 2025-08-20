@@ -18,6 +18,10 @@
   background-color: var(--main-bg-color);
 }
 
+.font{
+  font-family: 'Edu NSW ACT Cursive', cursive;;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -44,32 +48,44 @@
 }
 
 .icon-container2{
-  display: flex;
+  margin-right: 40px;
+  display: none;
+}
+
+#right-nav{
   flex-direction: column;
   align-items: center;
-  row-gap: 40px;
-  position: absolute;
-  top: 20px;
-  right: 60px;
-  width: 150px;
+  row-gap: 20px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 200px;
+  height: 100vh;
   padding: 20px 10px;
   z-index: 999;
   border: 10px;
   display: none;
 }
 
-.icon-container2, .icon-container2 *{
+.right-nav-cont{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#right-nav, #right-nav *{
   background-color: var(--card-color);
 }
 
-.icon-2{
-  position: relative;
-  display: flex;
-  justify-content: center;
+#burger{
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.icon-2 *{
+.cross{
+  cursor: pointer;
   position: absolute;
+  left: 15px;
 }
 
 .icon {
@@ -80,10 +96,23 @@
   cursor: pointer;
 }
 
+.r{
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: end;
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
+
 .icon,
 .icon * {
   font-size: 25px;
   background-color: inherit;
+}
+
+.r:hover, .r:hover *{
+  background-color: rgb(71, 71, 71) !important;
 }
 
 .icon-name {
