@@ -18,7 +18,7 @@ export default function ItemContainer({ productId }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:5000/item', {
+      const res = await fetch('https://subcryption-backend.onrender.com/item', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

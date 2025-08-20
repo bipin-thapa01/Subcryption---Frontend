@@ -2,8 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.postimg.cc'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.postimg.cc",
+      },
+    ],
   },
 };
 
 export default nextConfig;
+

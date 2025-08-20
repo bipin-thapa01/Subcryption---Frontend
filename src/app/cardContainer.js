@@ -32,7 +32,7 @@ export default function CardContainer({ ref }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:5000/card');
+      const res = await fetch('https://subcryption-backend.onrender.com/card');
       const data = await res.json();
       setCardDetails(data);
     }
