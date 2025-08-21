@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, useImperativeHandle } from "react";
 import Card from "./card";
-import Image from "next/image";
 import "./card.css";
 
 export default function CardContainer({ ref }) {
@@ -42,6 +41,7 @@ export default function CardContainer({ ref }) {
 
   useEffect(() => {
     if (cardDetails != null) {
+      if (cards === null) { }
       setCards(cardDetails.map((item, index) => {
         return <Card key={index} param={item} />
       }));
