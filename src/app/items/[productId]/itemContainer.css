@@ -74,7 +74,7 @@
   row-gap: 30px;
 }
 
-.requirement-card, .amount-card{
+.requirement-card, .amount-card, .payment-card, .qr-card{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -127,11 +127,7 @@
   overflow: hidden;
   padding: 5px 10px;
   cursor: pointer;
-  border: 3px solid var(--card-color);
-}
-
-.amount:hover{
-  border: 3px solid orange;
+  border: 4px solid var(--card-color);
 }
 
 .amount , .amount *{
@@ -147,4 +143,95 @@
   color: darkgreen;
   margin-top: 20px;
   font-weight: 600;
+}
+
+.payment-cards-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2%;
+  row-gap: 20px;
+}
+
+.payment-type-card{
+  flex: 0 0 48%;
+  border: 4px solid var(--card-color);
+  border-radius: 15px;
+  display: flex;
+  column-gap: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.payment-type-card, .payment-type-card *{
+  background-color: rgb(44, 44, 44);
+}
+
+.payment-type-card-image{
+  width: 180px;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.payment-type-card div{
+  margin: 5px 2px;
+}
+
+.payment-type-card-title{
+  font-size: 22px;
+}
+
+.payment-type-card-desc{
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.form-submit-button{
+  border: none;
+  border-radius: 15px;
+  height: 40px;
+  background-color: purple;
+  cursor: pointer;
+}
+
+.form-submit-button:hover{
+  background-color: rgb(95, 0, 95);
+  transition: background-color 0.2s linear;
+}
+
+.qr-image{
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.qr-rules-container{
+  margin-top: 20px;
+}
+
+.note{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.qr-rules{
+  margin-top: 20px;
+  margin-bottom: 60px;
+  white-space: pre-line;
+}
+
+.proof-image-container{
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 20px;
+}
+
+.proof-image-container div{
+  font-size: 600;
+}
+
+.proof-image-button{
+  font-size: 16px;
+  padding: 10px;    
 }

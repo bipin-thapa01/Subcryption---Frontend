@@ -17,10 +17,6 @@
   border: 2px solid var(--card-color);
 }
 
-.card:hover{
-  border: 2px solid var(--hover-color);
-}
-
 .card *{
   background-color: var(--card-color);
 }

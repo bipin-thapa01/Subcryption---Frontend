@@ -1,20 +1,35 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import IntroCard from "./introCard";
 import DescriptionCard from "./descriptionCard";
 import Requirement from "./requirement";
 import Amount from "./amount";
+import Payment from "./payment";
 import "./itemContainer.css"
 
 export default function ItemContainer({ productId }) {
+  const router = useRouter();
   const [itemData, setItemData] = useState(null);
   const [basicData, setBasicData] = useState(null);
   const [description, setDescription] = useState(null);
   const [amount, setAmount] = useState(null);
   const [requirement, setRequirement] = useState(null);
-  const [leftCards, setLeftCards] = useState(null);
-  const [rightCards, setRightCards] = useState(null);
+  const [requiredInfo, setRequiredInfo] = useState(null);
+  const [purchaseType,setPurchaseType] = useState(null);
+  const [paymentType, setPaymentType] = useState(null);
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    if(requiredInfo==null||purchaseType==null||paymentType==null){
+      alert('Before submitting make sure to enter data properly!');
+      return;
+    }
+    const json = JSON.stringify({...basicData,...requiredInfo,...purchaseType,...paymentType});
+    
+    router.push('/payment');
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,23 +60,18 @@ export default function ItemContainer({ productId }) {
     }
   }, [itemData]);
 
-  useEffect(() => {
-    setLeftCards(<div className="left-cards">
-      <IntroCard data={basicData} desc={description} />
-      <DescriptionCard desc={description} />
-    </div>);
-    setRightCards(
-      <form className="right-cards">
-        <Requirement requirement={requirement}/>
-        <Amount amount={amount}/>
-      </form>
-    );
-  }, [basicData, description, amount, requirement]);
-
   return (
     <div className="item-container">
-      {leftCards}
-      {rightCards}
+      <div className="left-cards">
+        <IntroCard data={basicData} desc={description} />
+        <DescriptionCard desc={description} />
+      </div>
+      <form className="right-cards" onSubmit={(e) => { submitForm(e) }}>
+        <Requirement requirement={requirement} onEnter={setRequiredInfo}/>
+        <Amount amount={amount} onSelect={setPurchaseType}/>
+        <Payment onSelect={setPaymentType}/>
+        <button className="form-submit-button">Pay Now</button>
+      </form>
     </div>
   );
 }
