@@ -9,6 +9,7 @@ export default function Payment({ onSelect }) {
   const [imageTag, setImageTag] = useState(null);
   const [rules, setRules] = useState(null);
   const [preview, setPreview] = useState("/not.png");
+  const [method, setMethod] = useState(null);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -28,7 +29,7 @@ export default function Payment({ onSelect }) {
             <Image className="payment-type-card-image" src={item.img} alt="image"
               width={100} height={100} />
             <div>
-              <div className="payment-type-card-title">{item.title}</div>
+              <div className="payment-type-card-title" >{item.title}</div>
               <div className="payment-type-card-desc">{item.desc}</div>
             </div>
           </div>
@@ -48,20 +49,33 @@ export default function Payment({ onSelect }) {
       box.classList.remove('payment-selected');
     }
     const box = e.currentTarget;
-    const method = e.currentTarget.querySelector('.payment-type-card-title').innerText;
     box.style.borderColor = 'purple';
     box.classList.add('selected');
-    onSelect({
-      method: method
-    });
-
+    const qrBox = document.getElementById('qr-card-id');
+    qrBox.style.display = 'flex';
+    setMethod(e.currentTarget.querySelector('.payment-type-card-title').innerText);
     const qrCard = document.getElementById('qr-card-id');
     qrCard.style.display = 'flex';
     for (let item of paymentDetails) {
-      if (item.title === method) {
+      if (item.title === e.currentTarget.querySelector('.payment-type-card-title').innerText) {
         setQrUrl(item.qrImg);
         setRules(item.paymentRules);
       }
+    }
+    setFormData();
+  }
+
+  const setFormData = () =>{
+    const name = document.getElementById('name-input').value;
+    const email = document.getElementById('email-input').value;
+    const image = document.getElementById('image-input').files[0];
+    if(method){
+      onSelect({
+        method: method,
+        name: name,
+        email: email,
+        image: image,
+      });
     }
   }
 
@@ -70,6 +84,7 @@ export default function Payment({ onSelect }) {
     if (file) {
       setPreview(URL.createObjectURL(file));
     }
+    setFormData();
   };
 
   return (
@@ -91,10 +106,14 @@ export default function Payment({ onSelect }) {
             <div className="qr-rules">{rules}</div>
           </div>
           <div className="proof-image-container">
-            <input type="text" className="input"/>
+            <input name="email" placeholder="Enter your email"
+              autoComplete="off" type="text" className="input" onChange={setFormData} id="email-input"/>
+            <input name="name" placeholder="Enter your name"
+              autoComplete="off" type="text" className="input" onChange={setFormData} id="name-input"/>
+            <div style={{ color: 'red' }}>Login is under development so fill below field to verify your payment.</div>
             <div>Note: Upload the ScreenShot of the payment receipt.</div>
-            <input type="file" accept="image/*" onChange={handleFileChange} className="proof-image-button"/>
-            <img src={preview} alt="Preview" width={200}/>
+            <input type="file" accept="image/*" onChange={handleFileChange} className="proof-image-button" id="image-input"/>
+            <img src={preview} alt="Preview" width={200} />
           </div>
         </div>
       </div>

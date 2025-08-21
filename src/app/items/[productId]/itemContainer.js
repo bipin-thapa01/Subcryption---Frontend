@@ -20,15 +20,22 @@ export default function ItemContainer({ productId }) {
   const [purchaseType,setPurchaseType] = useState(null);
   const [paymentType, setPaymentType] = useState(null);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     if(requiredInfo==null||purchaseType==null||paymentType==null){
       alert('Before submitting make sure to enter data properly!');
       return;
     }
-    const json = JSON.stringify({...basicData,...requiredInfo,...purchaseType,...paymentType});
-    
-    router.push('/payment');
+    const res = await fetch('http://localhost:5000/upload-form',
+    {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({...requiredInfo,...purchaseType,...paymentType}),
+    });
+    const data = await res.json();
+    console.log(data);
   }
 
   useEffect(() => {
