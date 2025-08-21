@@ -26,7 +26,7 @@ export default function ItemContainer({ productId }) {
       alert('Before submitting make sure to enter data properly!');
       return;
     }
-    const res = await fetch('http://localhost:5000/upload-form',
+    const res = await fetch('https://subcryption-backend.onrender.com/upload-form',
     {
       method: 'POST',
       headers:{
