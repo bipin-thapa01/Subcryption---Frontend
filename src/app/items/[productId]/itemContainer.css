@@ -29,7 +29,7 @@
   background-color: rgb(157, 3, 3);
 }
 
-#payment-successful-message-cross{
+#payment-message-cross{
   background-color: inherit;
   position: absolute;
   right: 20px;

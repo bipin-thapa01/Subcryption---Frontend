@@ -127,6 +127,10 @@
   font-size: 14px !important;
 }
 
+#left-icon-profile, #right-icon-profile{
+  display: none;
+}
+
 @media (max-width: 1250px){
   .logo {
     margin-left: 20px;

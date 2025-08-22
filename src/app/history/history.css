@@ -1,0 +1,59 @@
+.history-loading{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  font-size: 24px;
+}
+
+.history-cards-container{
+  margin: 120px 120px 40px 120px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.history-table-head{
+  display: flex;
+  background-color: purple;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.history-table-head *{
+  background-color: purple;
+}
+
+.history-table-head div{
+  width: 16.66%;
+  text-align: center;
+}
+
+.transaction-card{
+  border: 2px solid purple;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 5px 10px;
+  
+}
+
+.history-table-row{
+  display: flex;
+  padding: 10px 0px;
+}
+
+.history-table-row div{
+  width: 16.66%;
+  max-width: 16.66%;
+  font-size: 14px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(72, 72, 72);
+  text-align: center;
+}
+
+.history-table-amount{
+  color: green;
+  font-weight: 600;
+}

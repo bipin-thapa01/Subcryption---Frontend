@@ -39,7 +39,18 @@ export default function ItemContainer({ productId }) {
         },
         body: JSON.stringify({ ...requiredInfo, ...purchaseType, ...paymentType }),
       });
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0].replace(/-/g, '/');
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+
     const data = await res.json();
+    const length = localStorage.length;
+    localStorage.setItem(`purchase${length + 1}`, JSON.stringify({ ...itemData, ...requiredInfo, ...purchaseType, ...paymentType,date: formattedDate,time: formattedTime }));
+
     const successMessage = document.getElementById('payment-successful-message');
     const errorMessage = document.getElementById('payment-error-message');
     if (data.ok === 'ok') {
@@ -93,11 +104,11 @@ export default function ItemContainer({ productId }) {
   return (
     <>
       {!basicData || !requirement || !amount ? (
-        // Show nothing or a loading indicator
+
         <div className="item-loading">Loading Data. Be Patient...</div>
       ) : (
         <div className="item-container">
-          {/* Messages */}
+
           <div id="payment-successful-message" style={{ display: "none" }}>
             <ImCross className="payment-message-cross" onClick={hideMessage} />
             <div className="payment-successful-message-title">
@@ -116,14 +127,13 @@ export default function ItemContainer({ productId }) {
               Try to resubmit with same payment verification!
             </div>
           </div>
-  
-          {/* Left side */}
+
+
           <div className="left-cards">
             <IntroCard data={basicData} desc={description} />
             <DescriptionCard desc={description} />
           </div>
-  
-          {/* Right side */}
+
           <form className="right-cards" onSubmit={submitForm}>
             <Requirement
               requirement={requirement}
@@ -148,5 +158,4 @@ export default function ItemContainer({ productId }) {
       )}
     </>
   );
-  
 }

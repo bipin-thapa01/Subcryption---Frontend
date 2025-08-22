@@ -49,7 +49,7 @@ export default function Nav() {
           <MdOutlineHistory className="history-icon" />
           <div className="icon-name">History</div>
         </div>
-        <div className="icon left-icon" onClick={() => { router.push('/profile') }}>
+        <div className="icon left-icon" id="left-icon-profile" onClick={() => { router.push('/profile') }}>
           <IoPerson className="profile-icon" />
           <div className="icon-name">Profile</div>
         </div>
@@ -71,7 +71,7 @@ export default function Nav() {
             <MdOutlineHistory className="history-icon" />
             <div className="icon-name2">History</div>
           </div>
-          <div className="icon r" onClick={() => { router.push('/profile') }}>
+          <div className="icon r" id="right-icon-profile" onClick={() => { router.push('/profile') }}>
             <IoPerson className="profile-icon" />
             <div className="icon-name2">Profile</div>
           </div>
