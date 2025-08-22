@@ -1,7 +1,51 @@
+.item-loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  font-size: 40px;
+}
+
 .item-container{
   margin: 120px 120px 60px 120px;
   display: flex;
   column-gap: 20px;
+}
+
+#payment-successful-message, #payment-error-message{
+  background-color: green;
+  position: fixed;
+  z-index: 1000;
+  top: 70px;
+  right: 20px;
+  padding: 20px;
+  padding-right: 55px;
+  border-radius: 15px;
+  display: none;
+}
+
+#payment-error-message{
+  background-color: rgb(157, 3, 3);
+}
+
+#payment-successful-message-cross{
+  background-color: inherit;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.payment-successful-message-title{
+  background-color: inherit;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.payment-successful-message-desc{
+  background-color: inherit;
+  font-size: 14px;
+  color: rgb(207, 207, 207);
 }
 
 .left-cards{
@@ -288,6 +332,12 @@
   }
 }
 
+@media (max-width: 750px){
+  .item-loading{
+    font-size: 30px;
+  }
+}
+
 @media (max-width: 600px){
    .intro-card{
     width: 100%;
@@ -359,6 +409,28 @@
 }
 
 @media (max-width: 400px){
+  .item-loading{
+    font-size: 20px;
+  }
+
+  #payment-successful-message, #payment-error-message{
+    left: 4px;
+    right: 4px;
+    padding: 20px 5px;
+  }
+
+  #payment-successful-message-cross{
+    right: 5px;
+  }
+  
+  .payment-successful-message-title{
+    font-size: 14px;
+  }
+  
+  .payment-successful-message-desc{
+    font-size: 12px;
+  }
+
   .amount{
     flex: 0 0 100%;
   }

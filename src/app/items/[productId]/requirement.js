@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default function Requirement({ requirement, onEnter }) {
+export default function Requirement({ requirement, requirementCard, setRequirementCard, onEnter }) {
   const [desc, setDesc] = useState(null);
-  const [requirementCard, setRequirementCard] = useState(null);
 
   const updateData = () => {
     const obj = {};
@@ -23,6 +22,7 @@ export default function Requirement({ requirement, onEnter }) {
       );
     }
   }, [requirement]);
+
   return (
     <div className="item-card requirement-card">
       <div className="requirement-title title">

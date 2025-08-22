@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import "./itemContainer.css";
 
-export default function Payment({ onSelect }) {
+export default function Payment({ paymentDetailsCards, setPaymentDetailsCards, onSelect }) {
   const [paymentDetails, setPaymentDetails] = useState(null);
-  const [detailsCards, setDetailsCards] = useState(null);
   const [qrUrl, setQrUrl] = useState('');
   const [imageTag, setImageTag] = useState(null);
   const [rules, setRules] = useState(null);
@@ -23,7 +22,7 @@ export default function Payment({ onSelect }) {
 
   useEffect(() => {
     if (paymentDetails) {
-      setDetailsCards(
+      setPaymentDetailsCards(
         paymentDetails.map((item, index) => {
           return <div className="payment-type-card" key={index} onClick={(e) => { selectPayment(e) }}>
             <Image className="payment-type-card-image" src={item.img} alt="image"
@@ -93,7 +92,7 @@ export default function Payment({ onSelect }) {
         <div className="title"><span>3.</span>Select the Payment Method</div>
         <div className="payment-cards-container">
           {
-            detailsCards
+            paymentDetailsCards
           }
         </div>
       </div>

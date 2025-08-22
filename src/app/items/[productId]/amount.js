@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Amount({ amount, onSelect }) {
-  const [amountCard, setAmountCard] = useState(null);
-
+export default function Amount({ amount,amountCard, setAmountCard, onSelect }) {
   const amountSelected = (e) => {
     const amounts = document.getElementsByClassName('amount');
     for (let div of amounts) {
