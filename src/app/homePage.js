@@ -1,6 +1,7 @@
 "use client";
 
 import {useRef} from "react";
+import Message from "./message";
 import PromoPage from "./promoPage";
 import Filter from "./filter";
 import CardContainer from "./cardContainer";
@@ -15,6 +16,7 @@ export default function HomePage(){
 
   return(
     <div className="homepage">
+      <Message/>
       <PromoPage/>
       <Filter onTrigger={passFilter}/>
       <CardContainer ref={childRef}/>  

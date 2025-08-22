@@ -1,0 +1,27 @@
+.message, .message *{
+  background-color: green;
+}
+
+.message{
+  overflow: hidden;
+  margin-top: 80px;
+  display: flex;
+  padding: 10px 20px;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.message-icon{
+  font-size: 24px;
+}
+
+@media (max-width: 450px){
+  .message{
+    padding: 10px 10px;
+    column-gap: 10px;
+  }
+
+  .message-content{
+    font-size: 14px;
+  }
+}
