@@ -89,7 +89,7 @@ export default function Payment({ paymentDetailsCards, setPaymentDetailsCards, o
   return (
     <>
       <div className="item-card payment-card">
-        <div className="title"><span>3.</span>Select the Payment Method</div>
+        <div className="title"><span>3.</span><div>Select the Payment Method</div></div>
         <div className="payment-cards-container">
           {
             paymentDetailsCards
@@ -97,7 +97,7 @@ export default function Payment({ paymentDetailsCards, setPaymentDetailsCards, o
         </div>
       </div>
       <div className="item-card qr-card" id="qr-card-id">
-        <div className="title"><span>4.</span>Scan Below QR to Pay</div>
+        <div className="title"><span>4.</span><div>Scan Below QR to Pay</div></div>
         <div>
           {imageTag}
           <div className="qr-rules-container">

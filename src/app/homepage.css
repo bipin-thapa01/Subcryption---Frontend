@@ -108,3 +108,9 @@
     font-size: 12px;
   }
 }
+
+@media (min-width: 1500px){
+  .homepage{
+    margin: 60px calc(50% - 600px);
+  }
+}

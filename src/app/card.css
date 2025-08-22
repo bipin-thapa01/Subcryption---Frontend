@@ -7,8 +7,8 @@
 }
 
 .card {
-  flex: 0 0 18%;
-  max-width: 18%;
+  flex: 0 0 15%;
+  max-width: 15%;
   box-sizing: border-box;
   border: 2px solid var(--card-color);
   border-radius: 10px;

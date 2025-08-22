@@ -27,7 +27,7 @@ export default function Requirement({ requirement, requirementCard, setRequireme
     <div className="item-card requirement-card">
       <div className="requirement-title title">
         <span>1. </span>
-        {desc}</div>
+        <div>{desc}</div></div>
         {
           requirementCard
         }

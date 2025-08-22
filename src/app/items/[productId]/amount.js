@@ -34,7 +34,7 @@ export default function Amount({ amount,amountCard, setAmountCard, onSelect }) {
     <div className="item-card amount-card">
       <div className="amount-title title">
         <span>2. </span>
-        Select the Type You Want to Purchase</div>
+        <div>Select the Type You Want to Purchase</div></div>
       <div className="amount-container">
         {
           amountCard
