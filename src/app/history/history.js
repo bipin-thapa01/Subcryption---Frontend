@@ -1,49 +1,47 @@
 "use client";
 
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import HistoryCard from "./historyCard";
 import "./history.css";
 
-export default function History(){
+export default function History() {
   const [transactions, setTransactions] = useState(null);
-  const [transactionCards, setTransactionCards] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     const tran = {};
-    for(let i=0;i<localStorage.length;i++){
+    for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
       let value = localStorage.getItem(key);
       tran[key] = value;
     }
     setTransactions(tran);
-  },[]);
+  }, []);
 
-  useEffect(()=>{
-    if(transactions){
-      setTransactionCards(Object.entries(transactions).map((item,index)=>{
-        return <HistoryCard key={index} transactionId={index} data={item}/>
-      }));
-    }
-  },[transactions]);
+  if (!transactions) {
+    return <div className="history-loading">Loading. Be Patient...</div>;
+  }
 
-  return(
-    <>
-      {
-        !transactionCards?
-        (<div className="history-loading">Loading. Be Patient...</div>):
-        (<div className="history-cards-container">
-          <div className="history-head">Past Purchases</div>
-          <div className="history-table-head">
-            <div>Transaction Number</div>
-            <div className="history-game-title">Game</div>
-            <div>Payment Method</div>
-            <div>Amount</div>
-            <div>Purchase Type</div>
-            <div>Time</div>
-          </div>
-          {transactionCards}
-        </div>)
-      }
-    </>
+  const entries = Object.entries(transactions);
+
+  if (entries.length === 0) {
+    return <div className="history-empty">No Payment History Found</div>;
+  }
+
+  return (
+    <div className="history-cards-container">
+      <div className="history-head">Past Purchases</div>
+      <div className="history-table-head">
+        <div>Transaction Number</div>
+        <div className="history-game-title">Game</div>
+        <div>Payment Method</div>
+        <div>Amount</div>
+        <div>Purchase Type</div>
+        <div>Time</div>
+      </div>
+
+      {entries.map((item, index) => (
+        <HistoryCard key={index} transactionId={index} data={item} />
+      ))}
+    </div>
   );
 }

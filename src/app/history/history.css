@@ -13,6 +13,12 @@
   row-gap: 20px;
 }
 
+.history-empty{
+  margin-top: 120px;
+  text-align: center;
+  font-size: 24px;
+}
+
 .history-head{
   font-size: 30px;
   font-weight: 600;
