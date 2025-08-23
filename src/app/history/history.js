@@ -29,14 +29,14 @@ export default function History() {
 
   return (
     <div className="history-cards-container">
-      <div className="history-head">Past Purchases</div>
+      <div className="history-head no-select">Past Purchases</div>
       <div className="history-table-head">
-        <div>Transaction Number</div>
-        <div className="history-game-title">Game</div>
-        <div>Payment Method</div>
-        <div>Amount</div>
-        <div>Purchase Type</div>
-        <div>Time</div>
+        <div className="no-select">Transaction Number</div>
+        <div className="history-game-title no-select">Game</div>
+        <div className="no-select">Payment Method</div>
+        <div className="no-select">Amount</div>
+        <div className="no-select">Purchase Type</div>
+        <div className="no-select">Time</div>
       </div>
 
       {entries.map((item, index) => (
