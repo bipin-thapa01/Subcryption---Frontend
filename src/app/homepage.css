@@ -1,5 +1,6 @@
 .homepage{
   margin: 60px 120px;
+  min-height: 80vh;
 }
 
 .filter{

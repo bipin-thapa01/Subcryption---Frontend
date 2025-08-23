@@ -13,6 +13,10 @@
   column-gap: 20px;
 }
 
+.item-loading, .item-container{
+  min-height: 70vh;
+}
+
 #payment-successful-message, #payment-error-message{
   background-color: green;
   position: fixed;

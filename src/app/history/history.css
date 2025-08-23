@@ -6,6 +6,10 @@
   font-size: 24px;
 }
 
+.history-page, .history-loading{
+  min-height: 70vh;
+}
+
 .history-cards-container{
   margin: 120px 120px 40px 120px;
   display: flex;

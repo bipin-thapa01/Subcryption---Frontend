@@ -6,7 +6,7 @@ export default function DescriptionCard({ desc }) {
     if (desc) {
       setDescCard(
         <div className="description-card item-card" style={{ whiteSpace: "pre-line" }}>
-          {`${desc.description}\n\n Note: If topup hasn't been completed within a day then you will be refunded.`}
+          {`${desc.description}\n\n Note: If purchase hasn't been completed within a day then you will be refunded.`}
         </div>
       );
     }
