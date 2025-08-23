@@ -32,6 +32,7 @@ export default function History(){
         !transactionCards?
         (<div className="history-loading">Loading. Be Patient...</div>):
         (<div className="history-cards-container">
+          <div className="history-head">Past Purchases</div>
           <div className="history-table-head">
             <div>Transaction Number</div>
             <div className="history-game-title">Game</div>
