@@ -29,8 +29,8 @@
   background-color: rgb(157, 3, 3);
 }
 
-#payment-message-cross{
-  background-color: inherit;
+.payment-message-cross{
+  background-color: green;
   position: absolute;
   right: 20px;
   cursor: pointer;

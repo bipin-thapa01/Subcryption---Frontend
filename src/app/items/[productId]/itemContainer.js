@@ -31,6 +31,8 @@ export default function ItemContainer({ productId }) {
       alert('Before submitting make sure to enter data properly!');
       return;
     }
+    //for database
+    console.log(purchaseType);
     const res = await fetch('https://subcryption-backend.onrender.com/upload-form',
       {
         method: 'POST',
@@ -39,6 +41,23 @@ export default function ItemContainer({ productId }) {
         },
         body: JSON.stringify({ ...requiredInfo, ...purchaseType, ...paymentType }),
       });
+
+    // for email
+    const emailData = new FormData();
+    emailData.append("name",paymentType.name);
+    emailData.append("email",paymentType.email);
+    emailData.append("paymentMethod",paymentType.method);
+    emailData.append("purchaseType",purchaseType.type);
+    emailData.append("pricePaid",purchaseType.price);
+    emailData.append("image",paymentType.image);
+    const res2 = await fetch('https://subcryption-backend.onrender.com/send-email',
+    {
+      method: 'POST',
+      body: emailData,
+    })
+    const data2 = await res2.json();
+
+    //to store data in localhost. i will change this in future after login is added
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0].replace(/-/g, '/');
     const now = new Date();
@@ -49,7 +68,7 @@ export default function ItemContainer({ productId }) {
 
     const data = await res.json();
     const length = localStorage.length;
-    localStorage.setItem(`purchase${length + 1}`, JSON.stringify({ ...itemData, ...requiredInfo, ...purchaseType, ...paymentType,date: formattedDate,time: formattedTime }));
+    localStorage.setItem(`purchase${length + 1}`, JSON.stringify({ ...itemData, ...requiredInfo, ...purchaseType, ...paymentType, date: formattedDate, time: formattedTime }));
 
     const successMessage = document.getElementById('payment-successful-message');
     const errorMessage = document.getElementById('payment-error-message');
