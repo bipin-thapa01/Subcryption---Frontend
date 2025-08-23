@@ -18,6 +18,14 @@
   background-color: var(--main-bg-color);
 }
 
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
 .font{
   font-family: 'Edu NSW ACT Cursive', cursive;;
 }

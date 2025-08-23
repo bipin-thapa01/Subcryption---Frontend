@@ -63,10 +63,10 @@ export default function Filter({onTrigger}) {
         <div>Filter</div>
       </div>
       <div className="filter-container">
-        <div id="all" onClick={()=>allFilter()}>All</div>
-        <div id="games" onClick={()=>gamesFilter()}>Games</div>
-        <div id="subscription" onClick={()=>subscriptionFilter()}>Subscription</div>
-        <div id="services" onClick={()=>servicesFilter()}>Services</div>
+        <div className="no-select" id="all" onClick={()=>allFilter()}>All</div>
+        <div className="no-select" id="games" onClick={()=>gamesFilter()}>Games</div>
+        <div className="no-select" id="subscription" onClick={()=>subscriptionFilter()}>Subscription</div>
+        <div className="no-select" id="services" onClick={()=>servicesFilter()}>Services</div>
       </div>
     </div>
   );
