@@ -32,7 +32,6 @@ export default function ItemContainer({ productId }) {
       return;
     }
     //for database
-    console.log(purchaseType);
     const res = await fetch('https://subcryption-backend.onrender.com/upload-form',
       {
         method: 'POST',
@@ -44,6 +43,7 @@ export default function ItemContainer({ productId }) {
 
     // for email
     const emailData = new FormData();
+    emailData.append("requiredInfo",JSON.stringify(requiredInfo));
     emailData.append("name",paymentType.name);
     emailData.append("email",paymentType.email);
     emailData.append("paymentMethod",paymentType.method);

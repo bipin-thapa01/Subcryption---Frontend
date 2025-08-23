@@ -5,7 +5,7 @@ export default function Requirement({ requirement, requirementCard, setRequireme
 
   const updateData = () => {
     const obj = {};
-    const req = document.getElementsByClassName('input');
+    const req = document.getElementsByClassName('req-input');
     for (let r of req) {
       obj[r.name] = r.value;
     }
@@ -17,7 +17,7 @@ export default function Requirement({ requirement, requirementCard, setRequireme
       setDesc(requirement[0].requirement_desc);
       setRequirementCard(
         requirement.map((item, index) => {
-          return <input onChange={updateData} autoComplete="off" type="text" placeholder={item.requirement} name={item.requirement} key={index} className="input" />
+          return <input onChange={updateData} autoComplete="off" type="text" placeholder={item.requirement} name={item.requirement} key={index} className="input req-input" />
         })
       );
     }
