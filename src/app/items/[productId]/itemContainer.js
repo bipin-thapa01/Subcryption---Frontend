@@ -31,6 +31,8 @@ export default function ItemContainer({ productId }) {
       alert('Before submitting make sure to enter data properly!');
       return;
     }
+
+    document.getElementById('pay-now').innerText = 'Submitting...';
     //for database
     const res = await fetch('https://subcryption-backend.onrender.com/upload-form',
       {
@@ -172,7 +174,7 @@ export default function ItemContainer({ productId }) {
               setPaymentDetailsCards={setPaymentDetailsCards}
               onSelect={setPaymentType}
             />
-            <button className="form-submit-button">Pay Now</button>
+            <button className="form-submit-button" id="pay-now">Pay Now</button>
           </form>
         </div>
       )}
