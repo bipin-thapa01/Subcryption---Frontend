@@ -50,6 +50,7 @@ export default function ItemContainer({ productId }) {
     emailData.append("purchaseType",purchaseType.type);
     emailData.append("pricePaid",purchaseType.price);
     emailData.append("image",paymentType.image);
+    emailData.append("remark",paymentType.remark)
     const res2 = await fetch('https://subcryption-backend.onrender.com/send-email',
     {
       method: 'POST',

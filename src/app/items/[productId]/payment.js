@@ -67,12 +67,14 @@ export default function Payment({ paymentDetailsCards, setPaymentDetailsCards, o
   const setFormData = () =>{
     const name = document.getElementById('name-input').value;
     const email = document.getElementById('email-input').value;
+    const remark = document.getElementById('remark-input').value;
     const image = document.getElementById('image-input').files[0];
     if(method){
       onSelect({
         method: method,
         name: name,
         email: email,
+        remark: remark,
         image: image,
       });
     }
@@ -111,6 +113,7 @@ export default function Payment({ paymentDetailsCards, setPaymentDetailsCards, o
               autoComplete="off" type="text" className="input" onChange={setFormData} id="name-input"/>
             <div style={{ color: 'red' }}>Login is under development so fill below field to verify your payment.</div>
             <div>Note: Upload the ScreenShot of the payment receipt.</div>
+            <input type="text" onChange={setFormData} className="input" autoComplete="off" placeholder="Enter payment remark" id="remark-input"/>
             <input type="file" accept="image/*" onChange={handleFileChange} className="proof-image-button" id="image-input"/>
             <img src={preview} alt="Preview" width={200} />
           </div>
